@@ -1,0 +1,46 @@
+{% extends "account/base.html" %}
+
+{% load static i18n %}
+
+{% block title %} {{ movie.title }} {% endblock title %}
+
+{% block head_title %}{% trans "About" %}{% endblock %}
+<head>
+    <link rel="stylesheet" href="../../static/bundles/css/bootstrap.css">
+</head>
+{% block content %}
+   <div  >
+      <h2 align="center"> О нас</h2>
+    <div style="margin-left: 200px; margin-right: 200px; margin-bottom: 150px">
+        <h3>Часто задаваемые вопросы</h3>
+        <p>
+            Flicker arena — это крупнейший сервис о кино в рунете. На нем вы сможете посмотреть фильмы и сериалы, купить билеты в кино,
+            узнать рейтинги популярных видео и интересные факты, поставить фильмам оценки, написать рецензии и дополнить описание фильмов.
+        </p>
+        <table align="center" border="0"  cellpadding="20"  width="900px" style="border-color:#cbb2fa; background-color: rgba(123,104,238,0.49); margin-top: 100px ">
+
+            <tr height="50vh" border="0" >
+                <td align="center">
+                    <img width="150px" src={% static 'images/teatr.png' %} >
+                    <b><h4 style="color:#a8ccfc">Просмотр фильмов</h4></b>
+                </td>
+                <td align="center">
+                     <img width="150px" src={% static 'images/new.png' %} >
+                    <b><h4 style="color:#a8ccfc">Новинки кинопроката</h4></b>
+                </td>
+
+            </tr>
+            <tr  height="50vh" border="0" style="border-color:#cbb2fa;">
+                 <td align="center"  >
+                    <img width="150px" src={% static 'images/auth.png' %} >
+                    <b><h4 style="color: #a8ccfc">Безопасная авторизация</h4></b>
+                </td>
+                <td align="center">
+                     <img width="150px" src={% static 'images/rev.png' %} >
+                    <b><h4 style="color: #a8ccfc">Актуальные рецензии </h4></b>
+                </td>
+            </tr>
+        </table>
+    </div>
+   </div>
+{% endblock %}

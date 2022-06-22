@@ -1,0 +1,18 @@
+{% extends "account/base.html" %}
+
+{% load static i18n %}
+
+{% block title %} {{ paket.name }} {% endblock title %}
+
+{% block head_title %}{% trans "order" %}{% endblock %}
+<head>
+    <link rel="stylesheet" href="../../static/bundles/css/bootstrap.css">
+</head>
+{% block content %}
+    <h3>Подписка оформлена</h3>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"> Отправить</button>
+    </form>
+{% endblock %}

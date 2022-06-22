@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+
+{% load i18n movie_tag %}
+
+{% block head_title %}{% trans "Account Inactive" %}{% endblock %}
+
+{% block content %}
+<h1 style="padding-left: 100px">{% trans "Account" %}</h1>
+    <div class="profile_card" style="  display: inline-flex; margin-bottom: 10vh">
+    <div style="display: inline; padding-left: 100px">
+        <p style="color: #4C81C9; display: inline" > {% trans "User name :" %} <span>{{ user.username }}</span> </p>
+        <br>
+    <p style="color: #4C81C9; display: inline" > {% trans "User email :" %} <span>{{ user.email }}</span> </p>
+        <br>
+     {%  if user.userprofile.date_past %}
+    <p style="color: #4C81C9; display: inline" > {% trans "User subscription :" %} <span>{{ user.userprofile.DateSubDie}}</span> </p>
+     {% else %}
+        <a href="{% url 'movies_email' %}" >Оформить подписку</a>
+        {% endif %}
+
+        </div>
+  </div>
+{% endblock %}

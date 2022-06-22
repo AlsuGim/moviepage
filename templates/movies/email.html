@@ -1,0 +1,33 @@
+{% extends "account/base.html" %}
+
+{% load static i18n %}
+
+{% block title %} {{ movie.title }} {% endblock title %}
+
+{% block head_title %}{% trans "subscription packages" %}{% endblock %}
+<head>
+    <link rel="stylesheet" href="../../static/bundles/css/bootstrap.css">
+</head>
+{% block content %}
+    <h1>{% trans "Subscription packages" %}</h1>
+<br>
+    <div style="margin-top: 10vh; margin-bottom: 10vh">
+    <table  cellspacing="60%" cellpadding="20%"  style='  width:80vw; margin-left: 10vw; border: 10px; border-color: #d1d1d1;'  >
+    <tr style="color:#d1d1d1; align-content: center">
+            {% for post in pr %}
+
+{#                    <div class="col-md-4 product-men">#}
+{#                    <div class="product-shoe-info editContent text-center mt-lg-4">#}
+                            <td height="100vh" style="align-content:center"><h3 style="color: #4C81C9">{{ post.name }}</h3>
+                                <img  alt="Пакет" width="120vw" src="{{ post.pic.url}}")>
+
+                            <br> <p>{{ post.months }} месяца за <b>{{ post.price}}</b> руб + 2 месяца в подарок</p>
+                             <a class="btn_buy" href="order/{{ post.id }}" style="color: #614de5;  text-decoration: none;">Оплатить</a></td>
+
+{#                    </div>#}
+{#         % url 'movies_order' %       </div>#}
+            {% endfor %}
+    </tr>
+     </table>
+    </div>
+{% endblock %}

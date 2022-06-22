@@ -1,0 +1,27 @@
+{% extends "account/base.html" %}
+
+{% load static i18n %}
+
+{% block title %} {{ paket.name }} {% endblock title %}
+
+{% block head_title %}{% trans "order" %}{% endblock %}
+<head>
+    <link rel="stylesheet" href="../../static/bundles/css/bootstrap.css">
+</head>
+{% block content %}
+    <form method="post" action="{% url 'update_user_after' paket.id %}">
+    {% csrf_token %}
+    <div style="margin-left: 100px; margin-bottom: 100px ">
+         <h4>Стоимость вашей покупки: <label type="number" >{{ paket.price}}</label> РУБ</h4>
+        <h4>Длительность подписки: <label type="number" >{{ paket.months}}</label> месяцев</h4>
+       <p > Номер карты: </p><input type="number" name="numcard" maxlength="1">
+        <p >CVV-код: </p><input type="password" name="pass" maxlength="3" minlength="3">
+    <input type="hidden" value="{{ paket.id}}" name="paket_num" >
+
+
+
+    <input type="submit" value="Оформить покупку" name="Оформить покупку">
+        </div>
+   </form>
+
+{% endblock %}
